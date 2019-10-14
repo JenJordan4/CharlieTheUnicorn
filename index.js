@@ -425,6 +425,10 @@ function displayCurrentOptions() {
     let arrayOptions = thisScene.options
     let textOnlyOptions = arrayOptions.map(x => x.text);
     let userChoice = readlineSync.keyInSelect(textOnlyOptions, thisScene.endingQuestion)
+    if (userChoice === -1) {
+        console.log("Game Over  🍬 🍭 ⛰")
+        process.exit()
+    }
     currentScene = arrayOptions[userChoice].resultingScene
 }
 
